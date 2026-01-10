@@ -1,16 +1,20 @@
-import React, { useState } from "react";
+import { useState } from "react";
+import "./Counter.css";
 
 function Counter() {
   const [count, setCount] = useState(0);
 
   return (
-    
-    <div style={{ textAlign:"center", marginTop:"20px", color:"grey", fontFamily:"Arial, sans-serif", fontSize:"12px", border:"2px solid black", padding:"20px", width:"300px", margin:"auto", borderRadius:"10px" }}>
+    <div className="counter-container">
+      <h2>Counter</h2>
 
-      <h1>Counter: {count}</h1>
-      <button onClick={() => setCount(count + 1)}>+</button>
-      <button onClick={() => setCount(count - 1)}>-</button>
-      <button onClick={() => setCount(0)}>Reset</button>
+      <div className="count">{count}</div>
+
+      <div className="btn-group">
+        <button onClick={() => setCount(count - 1)}>-1</button>
+        <button onClick={() => setCount(0)}>Reset</button>
+        <button onClick={() => setCount(count + 1)}>+1</button>
+      </div>
     </div>
   );
 }
